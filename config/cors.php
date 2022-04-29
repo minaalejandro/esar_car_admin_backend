@@ -15,11 +15,11 @@ return [
     |
     */
 
-    'paths' => [],
+    'paths' => ['api/*', '*'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*', 'http://localhost:3001'],
+    'allowed_origins' => ['*', 'http://localhost:3001', 'https://73ed-188-43-136-43.jp.ngrok.io/'],
 
     'allowed_origins_patterns' => [],
 
