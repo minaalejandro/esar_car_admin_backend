@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 
-// header("Access-Control-Allow-Origin: *");
-// header('Access-Control-Allow-Credentials: true');
-// header('Access-Control-Allow-Methods: HEAD, POST, GET, OPTIONS, PUT');
-// header("Access-Control-Allow-Headers: Authorization, X-Requested-With,  Content-Type, Accept");
+header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Allow-Methods: HEAD, POST, GET, OPTIONS, PUT');
+header("Access-Control-Allow-Headers: Authorization, X-Requested-With,  Content-Type, Accept");
 
 /*
 |--------------------------------------------------------------------------
