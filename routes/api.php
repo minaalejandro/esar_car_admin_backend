@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::get('reportSample/getCountsRecordsExport', 'ReportsController@getCountsRecordsExport');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('cars', 'CarsController@getCars');
@@ -77,6 +78,9 @@ Route::group(['middleware' => 'jwt.auth'], function($router){
 	    Route::post('car/registration/approve/{id}', 'CarsController@approveRegistration');
 	    Route::post('car/insurance/deny/{id}', 'CarsController@denyInsurance');
 	    Route::post('car/registration/deny/{id}', 'CarsController@denyRegistration');
+
+		//car_datas
+		Route::get('car_data', 'CarDataController@getEsarCar');
 
 	    //trips
 	    Route::get('trip/{id}', 'TripsController@getTrip');
