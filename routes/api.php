@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 
-header("Access-Control-Allow-Origin: *");
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods: HEAD, POST, GET, OPTIONS, PUT');
-header("Access-Control-Allow-Headers: Authorization, X-Requested-With,  Content-Type, Accept");
+// header("Access-Control-Allow-Origin: *");
+// header('Access-Control-Allow-Credentials: true');
+// header('Access-Control-Allow-Methods: HEAD, POST, GET, OPTIONS, PUT');
+// header("Access-Control-Allow-Headers: Authorization, X-Requested-With,  Content-Type, Accept");
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,6 @@ Route::get('reportSample/getCountsRecordsExport', 'ReportsController@getCountsRe
 Route::post('login', 'Auth\LoginController@login');
 Route::get('cars', 'CarsController@getCars');
 Route::group(['middleware' => 'jwt.auth'], function($router){
-
 	#######################
 	##### CREATE USER #####
 	#######################
