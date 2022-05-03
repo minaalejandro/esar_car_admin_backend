@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\EsarCars;
 
+
 class CarDataController extends Controller
 {
     public function getEsarCar(Request $request)
@@ -27,6 +28,38 @@ class CarDataController extends Controller
        
         $meta = EsarCars::select("*")->count();
         $total = ceil($meta / 10);
-        return response()->json(['data' => $datas, 'total'=>$total], 200);
+        return response()->json(['data' => $datas, 'total'=>$meta], 200);
+    }
+
+    public function createCar(Request $request)
+    {
+        EsarCars::create([
+            'model_make_id' => $request['make'],
+            'model_name' => $request['model'],
+            'model_year' => $request['year'],
+            'model_transmission_type' =>$request['transmission'],
+            'model_trim' => $request['trim'],
+            'model_body' => $request['style']
+        ]);
+        return response()->json("message: sucess");
+    }
+
+    public function updateCar(Request $request) {
+        $id = $request['id'];
+        EsarCars::where('num', $id)
+                ->update(['model_body' => $request->input('model'),
+                         'model_year'=>$request->input('year'),
+                         'model_make_id'=>$request->input('make'),
+                         'model_trim'=>$request->input('trim'),
+                         'model_transmission_type'=>$request->input('transmission'),
+                         'model_name'=>$request->input('style')]
+                        );
+        return response()->json(['message' => "CarData updated successfully"], 200);
+    }
+
+    public function deleteCar($id) 
+    {
+        EsarCars::where('num', $id)->delete();
+        return response()->json(['message' => "CarData deleted successfully"], 200);
     }
 }

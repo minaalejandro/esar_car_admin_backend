@@ -81,6 +81,15 @@ Route::group(['middleware' => 'jwt.auth'], function($router){
 
 		//car_datas
 		Route::get('car_data', 'CarDataController@getEsarCar');
+		Route::post('car_data', 'CarDataController@createCar');
+		Route::post('car_data_update', 'CarDataController@updateCar');
+		Route::post('car_data_delete/{id}', 'CarDataController@deleteCar');
+
+		//car_list
+		Route::get('car_owner', 'CarListController@getOwners');
+		Route::get('choose-manufacturer/{id}', 'CarListController@chooseManufacturer');
+		Route::post('choose-model', 'CarListController@chooseModel');
+		Route::post('choose-transmission', 'CarListController@getTransmission');
 
 	    //trips
 	    Route::get('trip/{id}', 'TripsController@getTrip');
