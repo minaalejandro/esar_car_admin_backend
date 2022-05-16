@@ -33,7 +33,10 @@ class CarDataController extends Controller
 
     public function createCar(Request $request)
     {
+        $id = EsarCars::select('*')->count();
+        // $id = $count + 1;
         EsarCars::create([
+            'id' => $id,
             'model_make_id' => $request['make'],
             'model_name' => $request['model'],
             'model_year' => $request['year'],

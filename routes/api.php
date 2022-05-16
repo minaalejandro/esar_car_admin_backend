@@ -90,6 +90,9 @@ Route::group(['middleware' => 'jwt.auth'], function($router){
 		Route::get('choose-manufacturer/{id}', 'CarListController@chooseManufacturer');
 		Route::post('choose-model', 'CarListController@chooseModel');
 		Route::post('choose-transmission', 'CarListController@getTransmission');
+		Route::post('choose-car', 'CarListController@getCarData');
+		Route::post('add_car', 'CarListController@addCar');
+		Route::post('car-notice/{id}', 'CarListController@updateNotice');
 
 	    //trips
 	    Route::get('trip/{id}', 'TripsController@getTrip');

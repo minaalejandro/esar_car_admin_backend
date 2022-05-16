@@ -9,6 +9,6 @@ class EsarCars extends Model
     protected $table = 'esar_cars';
     public $timestamps = false;
     protected $fillable = [
-		'model_make_id', 'model_name', 'model_trim', 'model_year','model_transmission_type','model_body'
+		'model_make_id', 'id', 'model_name', 'model_trim', 'model_year','model_transmission_type','model_body'
 	];
 }

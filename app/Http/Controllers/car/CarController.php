@@ -27,6 +27,7 @@ class CarController extends Controller
     //
 	public function store(CarStoreRules $request)
 	{
+       
 		$user = $this->authenticateUserByToken();
         $data = $request->only(
             'long_location', 'lat_location', 'car_city', 'car_manufacturer',
@@ -104,6 +105,7 @@ class CarController extends Controller
 	
 	public function show(Car $car)
 	{
+       
         Request()->header('Authorization') ? $user = $this->authenticateUserByToken() : $user = null;
         if($user){
             $isFavorite = FavoriteCar::whereCarId($car->id)->where('user_id', $user->id)->first();
@@ -140,6 +142,7 @@ class CarController extends Controller
 	
 	public function update(CarUpdateRules $request, Car $car)
 	{
+      
 		$user = $this->authenticateUserByToken();
 		$this->checkUser($user->id, $car);
         $data = $request->only(
