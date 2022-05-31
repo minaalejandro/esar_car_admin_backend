@@ -38,6 +38,8 @@ class CarDataController extends Controller
         EsarCars::create([
             'id' => $id,
             'model_make_id' => $request['make'],
+            'manufacturer_arabic' => "",
+            'model_class' => "",
             'model_name' => $request['model'],
             'model_year' => $request['year'],
             'model_transmission_type' =>$request['transmission'],
