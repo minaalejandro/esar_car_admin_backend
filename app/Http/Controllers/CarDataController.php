@@ -62,7 +62,7 @@ class CarDataController extends Controller
         return response()->json(['message' => "CarData updated successfully"], 200);
     }
 
-    public function deleteCar($id) 
+    public function deleteCar($id)  
     {
         EsarCars::where('num', $id)->delete();
         return response()->json(['message' => "CarData deleted successfully"], 200);
